@@ -9,3 +9,14 @@ docker run -d --name meridian -p 8080:8080 --env-file .env meridian-ai
 docker ps
 docker logs meridian
 curl http://localhost:8080/api/health
+
+
+#Look inside the running container
+docker exec meridian ls -A /app
+docker exec meridian sh -c 'env | cut -d= -f1 | sort'
+docker exec meridian sh -c 'cat /proc/1/cmdline | tr "\0" " "'
+
+
+#Stop and remove the container
+docker stop meridian
+docker rm meridian

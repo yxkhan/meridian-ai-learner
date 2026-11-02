@@ -349,8 +349,8 @@ gcloud organizations list
 **2. Grant yourself the role on the Organization** (replace `YOUR_ORGANIZATION_ID` and `YOUR_EMAIL`):
 
 ```bash
-gcloud organizations add-iam-policy-binding YOUR_ORGANIZATION_ID \
-  --member="user:YOUR_EMAIL" \
+gcloud organizations add-iam-policy-binding 9626219907 \
+  --member=khanyaseen551@gmail.com \
   --role="roles/orgpolicy.policyAdmin"
 ```
 
@@ -380,6 +380,7 @@ gcloud iam service-accounts keys create github-deployer-key.json \
 Navigate to your GitHub repository → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 
 Add the following three secrets:
+
 
 | Secret Name | Value |
 |---|---|
@@ -413,6 +414,7 @@ The GitHub Action ([.github/workflows/deploy.yml](.github/workflows/deploy.yml))
 Once complete, the Action logs will print your live Cloud Run URL. Your application is now fully automated and live! 🚀
 
 ---
+
 
 ## Settings
 
